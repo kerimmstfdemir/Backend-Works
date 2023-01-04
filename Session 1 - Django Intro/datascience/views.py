@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def homedj(request):
-    return HttpResponse("Hello Django !!!")
+def homeds(request):
+    return HttpResponse("Hello Data Science !!!")
