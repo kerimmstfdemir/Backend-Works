@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import homedj
+from .views import homeds
 
 urlpatterns = [
-   path("", homedj),
+   path("", homeds)
 ]
