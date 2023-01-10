@@ -17,6 +17,6 @@ class Student(models.Model):
 
     class Meta:
         ordering = ('-number',)
-        verbose_name = "Öğrenci",
+        verbose_name = "Öğrenci"
         verbose_name_plural = "Öğrenciler"
         # db_table = "Students_db"  # Changes db table name
