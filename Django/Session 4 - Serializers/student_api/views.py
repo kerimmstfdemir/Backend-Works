@@ -43,7 +43,7 @@ def student_api_get_update_delete(request, pk):
             return Response(data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'PATCH':
-        serializer = StudentSerializer(student, data=request.data,partial=True)
+        serializer = StudentSerializer(student, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             data = {

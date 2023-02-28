@@ -20,6 +20,16 @@ from .models import Student
 #         return instance
 
 class StudentSerializer(serializers.ModelSerializer) :
+
+    born_year = serializers.SerializerMethodField()  # read_only
+
     class Meta :
         model = Student
-        fields = "__all__"
+        # fields = "__all__"
+        fields = ["id","first_name", "last_name", "number", "age", "born_year"]
+        # exclude = ["number"]
+
+    def get_born_year(self, obj) :
+        import datetime
+        current_time = datetime.datetime.now()
+        return current_time.year - obj.age
