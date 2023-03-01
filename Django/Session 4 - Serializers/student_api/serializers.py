@@ -22,14 +22,15 @@ from .models import Student
 class StudentSerializer(serializers.ModelSerializer) :
 
     born_year = serializers.SerializerMethodField()  # read_only
+    path = serializers.StringRelatedField()
 
     class Meta :
         model = Student
         # fields = "__all__"
-        fields = ["id","first_name", "last_name", "number", "age", "born_year"]
+        fields = ["id","first_name", "last_name", "number", "age", "born_year", "path"]
         # exclude = ["number"]
 
     def get_born_year(self, obj) :
         import datetime
         current_time = datetime.datetime.now()
-        return current_time.year - obj.age
+        return current_time.year - obj.age 
