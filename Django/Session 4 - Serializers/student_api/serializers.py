@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Student
+from .models import Student, Path
 
 # class StudentSerializer(serializers.Serializer):
 #     first_name = serializers.CharField(max_length=50)
@@ -22,15 +22,23 @@ from .models import Student
 class StudentSerializer(serializers.ModelSerializer) :
 
     born_year = serializers.SerializerMethodField()  # read_only
-    path = serializers.StringRelatedField()
+    path = serializers.StringRelatedField()  # name equivalents of ids (read_only)
+    path_id = serializers.IntegerField()
+
 
     class Meta :
         model = Student
         # fields = "__all__"
-        fields = ["id","first_name", "last_name", "number", "age", "born_year", "path"]
+        fields = ["id","first_name", "last_name", "number", "age", "born_year", "path", "path_id"]
         # exclude = ["number"]
 
     def get_born_year(self, obj) :
         import datetime
         current_time = datetime.datetime.now()
         return current_time.year - obj.age 
+    
+
+class PathSerializer(serializers.ModelSerializer) :
+    class Meta : 
+        model = Path
+        fields = "__all__"
