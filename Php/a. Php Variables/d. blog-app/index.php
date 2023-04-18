@@ -1,3 +1,29 @@
+<?php
+
+    $category1 = "Macera";
+    $category2 = "Dram";
+    $category3 = "Komedi";
+    $category4 = "Korku";
+
+    $film1_header = "Paper Lives";
+    $film1_summary = "Kağıt toplayarak geçinen ve sağlığı giderek kötüleşen Mehmet terk edilmiş bir çocuk bulur. Birden hayatına giren küçük Ali, onu kendi çocukluğuyla yüzleştirecektir. (18 yaş ve üzeri için uygundur)";
+    $film1_date = "03.12.2021";
+    $film1_img = "1.jpeg";
+    $film1_numberOfComment = "23";
+    $film1_numberOfLike = "106";
+    $film1_onVision = "Evet";
+
+    $film2_header = "Walking Dead";
+    $film2_summary = "Zombi kıyametinin ardından hayatta kalanlar, birlikte verdikleri ölüm kalım mücadelesinde insanlığa karşı duydukları umuda tutunur.";
+    $film2_date = "31.10.2010";
+    $film2_img = "2.jpeg";
+    $film2_numberOfComment = "236";
+    $film2_numberOfLike = "1023";
+    $film2_onVision = "Hayır";
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,30 +40,28 @@
         <div class="row">
             <div class="col-3">
                 <ul class="list-group">
-                    <li class="list-group-item">Category 1</li>
-                    <li class="list-group-item">Category 2</li>
-                    <li class="list-group-item">Category 3</li>
-                    <li class="list-group-item">Category 4</li>
+                    <li class="list-group-item"><?php echo $category1?></li>
+                    <li class="list-group-item"><?php echo $category2?></li>
+                    <li class="list-group-item"><?php echo $category3?></li>
+                    <li class="list-group-item"><?php echo $category4?></li>
                 </ul>
             </div>
             <div class="col-9">
                 <div class="card mb-3">
                     <div class="row">
                         <div class="col-3">
-                            <img class="img-fluid" src="./img/1.jpeg" alt="">
+                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film1_img}\" alt=\"img1\">"?>;
                         </div>
                         <div class="col-9">
                             <div class="card-body">
-                                <h5 class="card-title">Film Header</h5>
+                                <h5 class="card-title"><?php echo $film1_header?></h5>
                                 <p class="card-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora architecto
-                                    recusandae nisi culpa? Pariatur, eius labore. Illo odio iste perferendis rem
-                                    exercitationem, voluptatibus, nisi cum porro praesentium blanditiis voluptas harum.
+                                    <?php echo $film1_summary ?>
                                 </p>
                                 <div>
-                                    <span class="badge bg-primary">105 Comment</span>
-                                    <span class="badge bg-primary">541 Like</span>
-                                    <span class="badge bg-warning">In the Vision</span>
+                                    <span class="badge bg-primary"><?php echo $film1_numberOfComment?> Comment</span>
+                                    <span class="badge bg-primary"><?php echo $film1_numberOfLike?> Like</span>
+                                    <span class="badge bg-warning">In the Vision : <?php echo $film1_onVision?></span>
                                 </div>
                             </div>
                         </div>
@@ -47,48 +71,24 @@
                 <div class="card mb-3">
                     <div class="row">
                         <div class="col-3">
-                            <img class="img-fluid" src="./img/2.jpeg" alt="">
+                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film2_img}\" alt=\"img2\">"?>;
                         </div>
                         <div class="col-9">
                             <div class="card-body">
-                                <h5 class="card-title">Film Header</h5>
+                                <h5 class="card-title"><?php echo $film2_header?></h5>
                                 <p class="card-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora architecto
-                                    recusandae nisi culpa? Pariatur, eius labore. Illo odio iste perferendis rem
-                                    exercitationem, voluptatibus, nisi cum porro praesentium blanditiis voluptas harum.
+                                    <?php echo $film2_summary ?>
                                 </p>
                                 <div>
-                                    <span class="badge bg-primary">105 Comment</span>
-                                    <span class="badge bg-primary">541 Like</span>
-                                    <span class="badge bg-warning">In the Vision</span>
+                                    <span class="badge bg-primary"><?php echo $film2_numberOfComment?> Comment</span>
+                                    <span class="badge bg-primary"><?php echo $film2_numberOfLike?> Like</span>
+                                    <span class="badge bg-warning">In the Vision : <?php echo $film2_onVision?></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card mb-3">
-                    <div class="row">
-                        <div class="col-3">
-                            <img class="img-fluid" src="./img/3.jpeg" alt="">
-                        </div>
-                        <div class="col-9">
-                            <div class="card-body">
-                                <h5 class="card-title">Film Header</h5>
-                                <p class="card-text">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora architecto
-                                    recusandae nisi culpa? Pariatur, eius labore. Illo odio iste perferendis rem
-                                    exercitationem, voluptatibus, nisi cum porro praesentium blanditiis voluptas harum.
-                                </p>
-                                <div>
-                                    <span class="badge bg-primary">105 Comment</span>
-                                    <span class="badge bg-primary">541 Like</span>
-                                    <span class="badge bg-warning">In the Vision</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
