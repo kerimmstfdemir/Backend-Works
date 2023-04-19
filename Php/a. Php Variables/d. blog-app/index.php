@@ -21,6 +21,16 @@
     $film2_numberOfLike = "1023";
     $film2_onVision = "Hayır";
     
+    $film1_summary = ucfirst(strtolower($film1_summary));
+    $film2_summary = ucfirst(strtolower($film2_summary));
+
+    $film1_summary = substr($film1_summary,0,200)."...";
+    $film2_summary = substr($film2_summary,0,200)."...";
+
+    $film1_url = strtolower(str_replace([" ","ç","ü","ğ"],["-","c","u","g"],$film1_header));
+    $film2_url = strtolower(str_replace([" ","ç","ü","ğ"],["-","c","u","g"],$film2_header));
+
+    const header = "Popular Films";
 ?>
 
 
@@ -47,14 +57,15 @@
                 </ul>
             </div>
             <div class="col-9">
+                <h1 class="mb-4"><?php echo header ?></h1>
                 <div class="card mb-3">
                     <div class="row">
                         <div class="col-3">
-                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film1_img}\" alt=\"img1\">"?>;
+                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film1_img}\" alt=\"img1\">"?>
                         </div>
                         <div class="col-9">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $film1_header?></h5>
+                                <h5 class="card-title"><?php echo "<a href=\"{$film1_url}\">{$film1_header}</a>"?></h5>
                                 <p class="card-text">
                                     <?php echo $film1_summary ?>
                                 </p>
@@ -62,6 +73,7 @@
                                     <span class="badge bg-primary"><?php echo $film1_numberOfComment?> Comment</span>
                                     <span class="badge bg-primary"><?php echo $film1_numberOfLike?> Like</span>
                                     <span class="badge bg-warning">In the Vision : <?php echo $film1_onVision?></span>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -71,11 +83,11 @@
                 <div class="card mb-3">
                     <div class="row">
                         <div class="col-3">
-                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film2_img}\" alt=\"img2\">"?>;
+                            <?php echo "<img class=\"img-fluid\" src=\"./img/{$film2_img}\" alt=\"img2\">"?>
                         </div>
                         <div class="col-9">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $film2_header?></h5>
+                                <h5 class="card-title"><?php echo "<a href=\"{$film2_url}\">{$film2_header}</a>"?></h5>
                                 <p class="card-text">
                                     <?php echo $film2_summary ?>
                                 </p>
